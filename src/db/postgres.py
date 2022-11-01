@@ -1,14 +1,19 @@
 
 import sqlalchemy
 import databases
-
 import psycopg2
 
 
 def main():
-    conn = psycopg2.connect('postgres://avnadmin:AVNS_q834i3r1maOpS2gxnNN@pg-17c15aea-hosna-34d3.aivencloud.com:26315/defaultdb?sslmode=require')
+    conn = psycopg2.connect('postgres://postgres:5w9ervevy7fgkpc@remote.runflare.com:31752/advertisych_db')
 
-    query_sql = 'SELECT VERSION()'
+    query_sql = """CREATE TABLE Advertisements (
+                  id int,
+                  description varchar(255),
+                  email varchar(255),
+                  state varchar(255),
+                  category varchar(255)
+              );"""
 
     cur = conn.cursor()
     cur.execute(query_sql)
@@ -19,17 +24,17 @@ def main():
 
 if __name__ == "__main__":
     main()
-# DATABASE_URL = "postgresql://avnadmin:AVNS_q834i3r1maOpS2gxnNN@pg-17c15aea-hosna-34d3.aivencloud.com:26315/defaultdb?sslmode=require"
+# DATABASE_URL = "postgresql://postgres:5w9ervevy7fgkpc@remote.runflare.com:31752/advertisych_db"
 
 # database = databases.Database(DATABASE_URL)
 
 # metadata = sqlalchemy.MetaData()
 
 # engine = sqlalchemy.create_engine(
-#     DATABASE_URL, pool_size=3, max_overflow=0
+#     DATABASE_URL
 # )
 
-# image_table = sqlalchemy.Table(
+# advertisements_table = sqlalchemy.Table(
 #     "advertisements",
 #     metadata,
 #     sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
