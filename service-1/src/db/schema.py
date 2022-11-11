@@ -5,6 +5,7 @@ class AdvertiseIn(BaseModel):
     email: str
     state: str
     category: str
+    address: str
 
 class Advertise(BaseModel):
     id: int
@@ -12,3 +13,4 @@ class Advertise(BaseModel):
     email: str
     state: str
     category: str
+    address: str
