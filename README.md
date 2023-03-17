@@ -1,4 +1,4 @@
-# Ad Registration Service
+# Ad Registration Service 📢
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
